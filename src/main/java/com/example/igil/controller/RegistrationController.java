@@ -15,15 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/registration")
 public class RegistrationController {
 
+    //ОТВЕЧАЕТ ЗА РЕГИСТРАЦИЮ
+
     private final UserService userService;
 
-    @GetMapping
+    @GetMapping // ПОЛУЧЕНИЕ ФОРМЫ РЕГИСТРАЦИИ
     public String getPage(Model model){
         model.addAttribute("user", new User());
         return "registration";
     }
 
-    @PostMapping
+    @PostMapping // ПОЛУЧЕНИЕ ДАННЫХ ИЗИ ФОРМЫ
     public String registration(@ModelAttribute User user){
         userService.add(user);
         return "redirect:/home";

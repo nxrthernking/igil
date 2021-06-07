@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>comments</title>
+</head>
+<body>
+<table>
+  <thead>
+  <tr>
+    <td>Автор</td>
+    <td>Коммент</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="comment: ${comments}">
+    <td th:text="${comment.author}"></td>
+    <td th:text="${comment.content}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

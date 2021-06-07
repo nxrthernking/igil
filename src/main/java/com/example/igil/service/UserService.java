@@ -31,6 +31,7 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
+    // ДОБАВЛЕНИЕ ПОЛЬЗОВАТЕЛЯ В БД
     public User add(User user) {
         user.setPassword(encoder.encode(user.getPassword()));
         return userRepository.save(user);
