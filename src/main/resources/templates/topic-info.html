@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${topic.name}"></title>
+</head>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <td>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="post: ${topic.posts}">
+            <td th:text="${post.name}"></td>
+            <td><a th:href="@{/comment/add}">Добавить</a></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

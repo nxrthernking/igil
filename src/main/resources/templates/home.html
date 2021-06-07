@@ -7,6 +7,19 @@
     <title>Домашняя</title>
 </head>
 <body>
-<h1>домашняя</h1>
+<header>
+    <a th:href="@{/login}" sec:authorize="isAnonymous()">Вход</a>
+    <a th:href="@{/logout}" sec:authorize="isAuthenticated()">Выход</a>
+</header>
+<form action="#" th:action="@{/topic}" th:object="${topic}" method="get">
+    <select th:field="*{id}">
+        <option th:each="topic : ${topics}"
+                th:value="${topic.id}"
+                th:text="${topic.name}">
+            <!--th:selected="${conf}"-->
+        </option>
+    </select>
+    <input type="submit" th:value="Выбрать">
+</form>
 </body>
 </html>
