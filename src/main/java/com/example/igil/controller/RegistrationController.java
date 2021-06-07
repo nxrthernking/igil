@@ -28,6 +28,6 @@ public class RegistrationController {
     @PostMapping // ПОЛУЧЕНИЕ ДАННЫХ ИЗИ ФОРМЫ
     public String registration(@ModelAttribute User user){
         userService.add(user);
-        return "redirect:/home";
+        return "redirect:/";
     }
 }
