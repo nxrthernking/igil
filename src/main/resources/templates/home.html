@@ -11,6 +11,7 @@
     <a th:href="@{/login}" sec:authorize="isAnonymous()">Вход</a>
     <a th:href="@{/logout}" sec:authorize="isAuthenticated()">Выход</a>
     <a th:href="@{/registration}" sec:authorize="isAnonymous()">Регистрация</a>
+    <a th:href="@{/comment/all}">Комменты</a>
 </header>
 <form action="#" th:action="@{/topic}" th:object="${topic}" method="get">
     <select th:field="*{id}">
