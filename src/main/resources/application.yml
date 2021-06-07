@@ -9,4 +9,6 @@ spring:
     generate-ddl: false
     show-sql: true
     hibernate:
-      ddl-auto: create #validate
+      ddl-auto: validate #validate
+server:
+  port: 8981
